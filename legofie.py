@@ -25,10 +25,11 @@ resImage = cv2.resize(image, (brickSize, int(ratio*brickSize)), interpolation = 
 recImage = cv2.resize(resImage, (int(image.shape[1]), int(ratio*image.shape[0])), interpolation = cv2.INTER_AREA)
 
 faces = list()
-faces.append("legoPost.jpg")
-faces.append("legoPost1.jpg")
-faces.append("legoPost2.jpg")
-faces.append("legoPost3.jpg")
+path = 'images/'
+faces.append(path + "legoPost.jpg")
+faces.append(path + "legoPost1.jpg")
+faces.append(path + "legoPost2.jpg")
+faces.append(path + "legoPost3.jpg")
 
 brickRes = int(float(sys.argv[3])*image.shape[0])//brickSize
 bricks = list()
