@@ -55,6 +55,15 @@ raw_legoImage = cv2.vconcat(yBricks)
 legoImage = cv2.convertScaleAbs(raw_legoImage + np.random.normal(0, 2, raw_legoImage.shape), alpha = float(sys.argv[4]), beta = float(sys.argv[5]))
 legoImage = np.where(raw_legoImage > threshold, legoImage, 15)
 
-plt.axis('off')
-plt.imshow(legoImage)
+#plt.imshow(legoImage)
+#plt.savefig("%s_%s_lego.jpg" % (brickSize, name.replace(".jpg", "")), bbox_inches = 'tight', dpi=int(sys.argv[6]))
+
+fig, ax = plt.subplots(1, 2)
+ax[0].imshow(image)
+ax[1].imshow(legoImage)
+
+ax[0].axis('off')
+ax[1].axis('off')
 plt.savefig("%s_%s_lego.jpg" % (brickSize, name.replace(".jpg", "")), bbox_inches = 'tight', dpi=int(sys.argv[6]))
+#plt.show()
+
